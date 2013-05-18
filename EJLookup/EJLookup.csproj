@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1F5C30DA-5DB6-466B-9D0B-DE0BB4CD8C18}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EJLookup</RootNamespace>
+    <AssemblyName>EJLookup</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>EJLookup.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>EJLookup.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nihongo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultLine.cs" />
+    <Compile Include="SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Suggest.cs" />
+    <Compile Include="Dictionary.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Dic\4jword3.idx" />
+    <Content Include="Data\Dic\4jword3.utf" />
+    <Content Include="Data\Dic\aviation.idx" />
+    <Content Include="Data\Dic\aviation.utf" />
+    <Content Include="Data\Dic\buddhdic.idx" />
+    <Content Include="Data\Dic\buddhdic.utf" />
+    <Content Include="Data\Dic\classical.idx" />
+    <Content Include="Data\Dic\classical.utf" />
+    <Content Include="Data\Dic\compdic.idx" />
+    <Content Include="Data\Dic\compdic.utf" />
+    <Content Include="Data\Dic\compverb.idx" />
+    <Content Include="Data\Dic\compverb.utf" />
+    <Content Include="Data\Dic\concrete.idx" />
+    <Content Include="Data\Dic\concrete.utf" />
+    <Content Include="Data\Dic\ediclsd4.idx" />
+    <Content Include="Data\Dic\ediclsd4.utf" />
+    <Content Include="Data\Dic\edict.idx" />
+    <Content Include="Data\Dic\edict.utf" />
+    <Content Include="Data\Dic\engscidic.idx" />
+    <Content Include="Data\Dic\engscidic.utf" />
+    <Content Include="Data\Dic\envgloss.idx" />
+    <Content Include="Data\Dic\envgloss.utf" />
+    <Content Include="Data\Dic\findic.idx" />
+    <Content Include="Data\Dic\findic.utf" />
+    <Content Include="Data\Dic\forsdic_e.idx" />
+    <Content Include="Data\Dic\forsdic_e.utf" />
+    <Content Include="Data\Dic\forsdic_s.idx" />
+    <Content Include="Data\Dic\forsdic_s.utf" />
+    <Content Include="Data\Dic\geodic.idx" />
+    <Content Include="Data\Dic\geodic.utf" />
+    <Content Include="Data\Dic\jddict.idx" />
+    <Content Include="Data\Dic\jddict.utf" />
+    <Content Include="Data\Dic\jr-edict.idx" />
+    <Content Include="Data\Dic\jr-edict.utf" />
+    <Content Include="Data\Dic\kanjidic.idx" />
+    <Content Include="Data\Dic\kanjidic.utf" />
+    <Content Include="Data\Dic\lawgledt.idx" />
+    <Content Include="Data\Dic\lawgledt.utf" />
+    <Content Include="Data\Dic\lingdic.idx" />
+    <Content Include="Data\Dic\lingdic.utf" />
+    <Content Include="Data\Dic\manufdic.idx" />
+    <Content Include="Data\Dic\manufdic.utf" />
+    <Content Include="Data\Dic\mktdic.idx" />
+    <Content Include="Data\Dic\mktdic.utf" />
+    <Content Include="Data\Dic\pandpdic.idx" />
+    <Content Include="Data\Dic\pandpdic.utf" />
+    <Content Include="Data\Dic\stardict.idx" />
+    <Content Include="Data\Dic\stardict.utf" />
+    <Content Include="Data\Dic\suggest.dat" />
+    <Content Include="Data\Dic\warodai.idx" />
+    <Content Include="Data\Dic\warodai.utf" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\kanatab.txt" />
+    <Content Include="Data\romatab.txt" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

@@ -1,0 +1,150 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="EJLookup.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:EJLookup"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:my="clr-namespace:System;assembly=mscorlib">
+
+    <phone:PhoneApplicationPage.Resources>
+        <local:AppSettings x:Key="appSettings"></local:AppSettings>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="EJLookup" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Настройки" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <ScrollViewer Grid.Row="1" Margin="12,0,12,0">
+          <Grid x:Name="ContentPanel">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,20" Name="textBlockGeneral" Text="Общие" VerticalAlignment="Top" FontSize="28" Grid.Row="0" />
+            <toolkit:ListPicker Header="Размер шрифта" Height="Auto"  Margin="0,0,0,20" Name="listFont" VerticalAlignment="Top" Grid.Row="1"
+                ItemsSource="{Binding Source={StaticResource appSettings}, Path=FontSizeList}"
+                SelectedIndex="{Binding Source={StaticResource appSettings}, Path=FontSize, Mode=TwoWay}" />
+            <toolkit:ListPicker Header="Максимум результатов" Height="Auto" Margin="0,0,0,20" Name="listResult" VerticalAlignment="Top" Grid.Row="2"
+                ItemsSource="{Binding Source={StaticResource appSettings}, Path=MaxResList}"
+                SelectedIndex="{Binding Source={StaticResource appSettings}, Path=MaxResults, Mode=TwoWay}" />
+            <toolkit:ListPicker Header="Максимум подсказок" Height="Auto" Margin="0,0,0,20" Name="listSuggest" VerticalAlignment="Top" Grid.Row="3"
+                ItemsSource="{Binding Source={StaticResource appSettings}, Path=MaxSugList}"
+                SelectedIndex="{Binding Source={StaticResource appSettings}, Path=MaxSuggest, Mode=TwoWay}" />
+            <CheckBox Content="Подсказки в ромадзи" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,20" Name="checkBoxRomaji" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=Romaji, Mode=TwoWay}" Grid.Row="4" />
+            <TextBlock Height="Auto" HorizontalAlignment="Left" Margin="0,20,0,20" Name="textBlockDictionary" Text="Используемые словари" VerticalAlignment="Top" FontSize="28" Grid.Row="5" />
+            <CheckBox Content="jr-edict" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="jredict" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=jredict, Mode=TwoWay}" Grid.Row="6" />
+            <CheckBox Content="warodai" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="warodai" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=warodai, Mode=TwoWay}" Grid.Row="7" />
+            <CheckBox Content="edict" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="edict" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=edict, Mode=TwoWay}" Grid.Row="8" />
+            <CheckBox Content="kanjidic" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="kanjidic" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=kanjidic, Mode=TwoWay}" Grid.Row="9" />
+            <CheckBox Content="ediclsd4" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="ediclsd4" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=ediclsd4, Mode=TwoWay}" Grid.Row="10" />
+            <CheckBox Content="classical" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="classical" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=classical, Mode=TwoWay}" Grid.Row="11" />
+            <CheckBox Content="compverb" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="compverb" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=compverb, Mode=TwoWay}" Grid.Row="12" />
+            <CheckBox Content="compdic" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="compdic" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=compdic, Mode=TwoWay}" Grid.Row="13" />
+            <CheckBox Content="lingdic" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="lingdic" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=lingdic, Mode=TwoWay}" Grid.Row="14" />
+            <CheckBox Content="jddict" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="jddict" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=jddict, Mode=TwoWay}" Grid.Row="15" />
+            <CheckBox Content="4jword3" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="jword3" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=jword3, Mode=TwoWay}" Grid.Row="16" />
+            <CheckBox Content="aviation" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="aviation" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=aviation, Mode=TwoWay}" Grid.Row="17" />
+            <CheckBox Content="buddhdic" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="buddhdic" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=buddhdic, Mode=TwoWay}" Grid.Row="18" />
+            <CheckBox Content="engscidic" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="engscidic" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=engscidic, Mode=TwoWay}" Grid.Row="19" />
+            <CheckBox Content="envgloss" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="envgloss" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=envgloss, Mode=TwoWay}" Grid.Row="20" />
+            <CheckBox Content="findic" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="findic" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=findic, Mode=TwoWay}" Grid.Row="21" />
+            <CheckBox Content="forsdic_e" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="forsdic_e" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=forsdic_e, Mode=TwoWay}" Grid.Row="22" />
+            <CheckBox Content="forsdic_s" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="forsdic_s" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=forsdic_s, Mode=TwoWay}" Grid.Row="23" />
+            <CheckBox Content="geodic" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="geodic" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=geodic, Mode=TwoWay}" Grid.Row="24" />
+            <CheckBox Content="lawgledt" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="lawgledt" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=lawgledt, Mode=TwoWay}" Grid.Row="25" />
+            <CheckBox Content="manufdic" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="manufdic" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=manufdic, Mode=TwoWay}" Grid.Row="26" />
+            <CheckBox Content="mktdic" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="mktdic" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=mktdic, Mode=TwoWay}" Grid.Row="27" />
+            <CheckBox Content="pandpdic" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="pandpdic" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=pandpdic, Mode=TwoWay}" Grid.Row="28" />
+            <CheckBox Content="stardict" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="stardict" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=stardict, Mode=TwoWay}" Grid.Row="29" />
+            <CheckBox Content="concrete" Height="Auto" HorizontalAlignment="Left" Margin="0,0,0,0" Name="concrete" VerticalAlignment="Top"
+                IsChecked="{Binding Source={StaticResource appSettings}, Path=concrete, Mode=TwoWay}" Grid.Row="30" />
+          </Grid>
+        </ScrollViewer>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
